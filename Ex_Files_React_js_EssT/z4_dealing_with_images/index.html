@@ -1,0 +1,90 @@
+<!-- this includes adding keys to a list too-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src = "https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <title>React ⚛️</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      
+      function Header(props){
+        console.log(props)
+        return(
+            <header>
+                <h1 > {props.name}'s React App </h1>
+            </header>
+            );
+      }
+
+      function Main(props){
+        return(
+            <section>
+                <p>This is {props.name2}'s React App. This is Sam's React App.
+                    This is Sam's React App.
+                    This is Sam's React App.
+                    This is Sam's React App.
+                    This is Sam's React App.
+                    This is Sam's React App.
+                    This is Sam's React App. </p>
+                <img height={200} 
+                src="https://images.pexels.com/photos/67468/pexels-photo-67468.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                alt = "this is a restaurant image"/> 
+                <img height={100}
+                src = "C:\Users\94716\Downloads\Exercise Files\Ex_Files_React_js_EssT\z4_dealing_with_images\image.jpg"
+                alt = "this is the second image"/>
+                <ul> {dishes.map((dish, i) => (
+                  <li key={i}> {dish} </li>
+                 ))} </ul>
+            </section>
+        );
+      }
+      //can add the keys (i) like this - 
+      // <ul> {dishes.map((dish, i) => (
+      //               <li key={i}> {dish} </li>
+      //           ))} </ul>
+      //but the react docs advice against this. instead of this we'll do a small data
+      //..transformation. which is done on line 59
+
+
+//below, react fragments are used instead of div tags
+      function App(){
+        return(
+            <React.Fragment> 
+                <Header name="Samindi"/>
+                <Main 
+                name2="Wani"/>
+            </React.Fragment>
+        );
+      }
+
+      function Footer(props){
+        return(
+            <footer>
+                <p>Copyright {props.year} </p>
+            </footer>
+        )
+      }
+
+      ReactDOM.render( 
+        <div>
+            <Header name="Samindi"/>,
+            <Main name2="Wanig"/>,
+            <Footer year = {new Date().getFullYear()}/>
+            
+        </div>,
+      document.getElementById("root") 
+    ); 
+    </script>
+  </body>
+</html>

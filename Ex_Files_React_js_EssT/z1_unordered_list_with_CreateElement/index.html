@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <title>React ⚛️</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/javascript">
+      let ul = React.createElement(
+        "ul", 
+        {style:{color:"blue"}}, 
+        React.createElement("li", null, "Monday"),
+        React.createElement("li", null, "Tuesday"),
+        React.createElement("li", null, "Wednesday")
+        );
+      ReactDOM.render( 
+        ul,
+      document.getElementById("root") 
+    ); 
+    </script>
+  </body>
+</html>
+
+<!-- as we get more createelement calls on our page it gets a lot more complicated
+    every single element we want to create has to have its own createelemtent call
+    so we need a helper or something like that to help us with this complexity
+    this helper is called JSX -  JavaScript as XML -> it is a html like syntax for
+    ...creating UI elements 
+    now instead of using all the create element calls, we can use tags instead
+    this is shown in the index.html file under the folder named "unordered_list_with_xml"
