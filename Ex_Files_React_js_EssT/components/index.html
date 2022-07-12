@@ -1,0 +1,81 @@
+<!-- what we did with the unordered lists were creating elements.
+now we'll try creating components. 
+its a building block, a piece of the UI that will describe one 
+part of the application.
+a component is a javascript function that returns jsx-->
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src = "https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <title>React ⚛️</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      
+      function Header(){ //when creating components, use capital letters
+        return(
+            <header>
+                <h1> Sam's React App </h1>
+            </header>
+            );
+      }
+
+      function Main(){
+        return(
+            <section>
+            <p>This is Sam's React App. This is Sam's React App.
+                This is Sam's React App.
+                This is Sam's React App.
+                This is Sam's React App.
+                This is Sam's React App.
+                This is Sam's React App.
+                This is Sam's React App. </p>
+            </section>
+        );
+      }
+
+      function App(){
+        return(
+            <div>
+                <Header/>
+                <Main/>
+            </div>
+        );
+      }
+
+      ReactDOM.render( 
+        //you cant have Header and Main rendered without them being
+        //.. inside a div tag. because react always tries to render only one
+        //..component only. so if we're using more than one domponents
+        //..we need to have them inside a div tag when we're calling them
+        //..inside the reactDOM.render().
+        //if we dont want to put this inside a div, we can write a new 
+        //..new function ("App" above) to do both the Header and the Main and then
+        //..call only the new function inside the render()
+        <div>
+            <Header/>,
+            <Main/>,
+            <App/>
+        </div>,
+      document.getElementById("root") 
+    ); 
+    </script>
+  </body>
+</html>
+
+<!-- <ul> etc tags are not supported in the browser on its own
+    we need to use babel to convert this into a proper accepted format
+    we need to add babel script as we have done on line 13
+-->

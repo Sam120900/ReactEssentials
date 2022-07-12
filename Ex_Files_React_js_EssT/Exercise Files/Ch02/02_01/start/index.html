@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <title>React ⚛️</title>
+  </head>
+  <body>
+    <div id="root"></div> <!--this div is where we add our react code--> 
+    <!--<h1>Getting Started with React</h1>-->
+    <script type="text/javascript">
+      let heading = React.createElement("h1", null, "Getting started with ReactJS!!")
+      //reactDOM takes in 2 arguments
+      ReactDOM.render( 
+        heading,
+        //used to create an element to add to the page
+        //h1 is the type of element we want to create
+        //null because we dont pass any properties
+        //now we've done the same thing that the html h1 tage did
+      document.getElementById("root") //where we want to put this element that we created
+    ); //we just used the reactDOM.render funtion to take the create element call we added and..
+    //..add it to the document at the element called root. we're saying find that element..
+    //..in the page and inject our react code into it
+    </script>
+  </body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src = "https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <title>React ⚛️</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      
+      function Header(props){
+        console.log(props)
+        return(
+            <header>
+                <h1 > {props.name}'s React App </h1>
+            </header>
+            );
+      }
+
+      function Main(props){
+        return(
+            <section>
+                <p>This is {props.name2}'s React App. This is Sam's React App.
+                    This is Sam's React App.
+                    This is Sam's React App.
+                    This is Sam's React App.
+                    This is Sam's React App.
+                    This is Sam's React App.
+                    This is Sam's React App. </p>
+                <ul> {dishes.map((dish) => (
+                    <li> {dish} </li>
+                ))} </ul>
+            </section>
+        );
+      }
+
+      const dishes = [
+        "Macaroni and Cheese",
+        "Pepperoni Pizza",
+        "Pasta with Pesto"
+      ]
+
+      function App(){
+        return(
+            <div>
+                <Header name="Samindi"/>
+                <Main name2="Wani"/>
+            </div>
+        );
+      }
+
+      function Footer(props){
+        return(
+            <footer>
+                <p>Copyright {props.year} </p>
+            </footer>
+        )
+      }
+
+      ReactDOM.render( 
+        <div>
+            <Header name="Samindi"/>,
+            <Main name2="Wanig"/>,
+            <Footer year={2022}/>
+            <Footer year = {new Date().getFullYear()}/>
+            <App/>
+        </div>,
+      document.getElementById("root") 
+    ); 
+    </script>
+  </body>
+</html>
